@@ -1,0 +1,131 @@
+---
+swagger: "2.0"
+info:
+  description: ""
+  version: "1.0"
+  title: "PetStore"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: ""
+    url: ""
+    email: ""
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+- name: "pet"
+  description: "Updates a pet in the store with form data"
+paths:
+  /pet:
+    post:
+      tags: []
+      summary: "Add a new pet to the store"
+      description: "sdd"
+      operationId: "addPet"
+      consumes: []
+      produces: []
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "desc"
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "string"
+        500:
+          description: "Error "
+      x-swagger-router-controller: "Default"
+  /petStatus:
+    get:
+      tags: []
+      summary: "Status of Pet"
+      description: "Status of Pet"
+      operationId: "findPetsByStatus"
+      consumes: []
+      produces: []
+      parameters: []
+      x-swagger-router-controller: "Default"
+  /petStatus1:
+    get:
+      tags: []
+      summary: "Finds Pets by status"
+      description: "Finds Pets by status"
+      operationId: "findPetsByStatus"
+      consumes: []
+      produces: []
+      parameters:
+      - name: "Status"
+        in: "query"
+        description: "ssdds"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+        400:
+          description: "sds"
+          schema:
+            type: "string"
+      x-swagger-router-controller: "Default"
+  /postPetURLs:
+    post:
+      tags: []
+      summary: "post pet "
+      description: "desc"
+      operationId: "POST_PET"
+      consumes: []
+      produces: []
+      parameters:
+      - in: "body"
+        name: "boby"
+        description: "ssd"
+        required: true
+      responses:
+        200:
+          description: "success"
+        400:
+          description: "sd"
+          schema:
+            type: "string"
+      x-swagger-router-controller: "Default"
+definitions:
+  Category:
+    type: "object"
+    properties:
+      Id:
+        type: "integer"
+        description: "Category Id"
+      Name:
+        type: "string"
+        description: "Category Name"
+      CategoryArr:
+        type: "array"
+        description: "Category Array"
+  Pet:
+    type: "object"
+    properties:
+      Id:
+        type: "integer"
+        description: "Pet Id"
+      Name:
+        type: "string"
+        description: "Pet Name"
+      Category:
+        type: "object"
+        description: "Category Ref"
+        properties: {}
+      photourls:
+        type: "object"
+        description: "array of photourls"
+        properties: {}
+  Status:
+    type: "string"
+  photourls:
+    type: "array"
+    items:
+      type: "string"
